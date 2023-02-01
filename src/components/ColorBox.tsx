@@ -1,9 +1,10 @@
 interface props {
-    color: string
+    color: string,
+    onClick: (color: string) => void;
 }
 
-export default function ColorBox({color}: props) {
+export default function ColorBox({color, onClick}: props) {
     return (
-        <div className={'color-box'} style={{backgroundColor: color}}/>
+        <div onClick={() => onClick(color)} className={'color-box'} style={{backgroundColor: color}}/>
     )
 }
